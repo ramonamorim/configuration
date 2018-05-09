@@ -1,0 +1,28 @@
+server: 
+  port: 9093
+
+eureka: 
+  instance: 
+    hostname: localhost 
+    port: 9091 
+  client: 
+    registerWithEureka: true 
+    fetchRegistry: false 
+    serviceUrl: 
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/ 
+  server: 
+    wait-time-in-ms-when-sync-empty: 3000 
+
+spring: 
+    data: 
+    mongodb: 
+      host: localhost
+      port: 27017 
+      database: mongodb 
+            
+authserver: 
+  hostname: http://localhost:9092 
+security: 
+  oauth2: 
+    resource: 
+      userInfoUri: ${authserver.hostname}/auth/token
