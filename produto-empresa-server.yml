@@ -25,4 +25,4 @@ authserver:
 security: 
   oauth2: 
     resource: 
-      userInfoUri: ${authserver.hostname}/api/auth/token
+      userInfoUri: ${authserver.hostname}/auth/token
